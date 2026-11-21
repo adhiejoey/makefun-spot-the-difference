@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twin Spots — Spot the Difference</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>🔍 Twin Spots</h1>
+      <p class="sub">Two pictures, seven differences. Find them all!</p>
+    </header>
+
+    <div id="hud">
+      <span id="hud-level">Level 1 · Lighthouse Cove</span>
+      <span id="hud-found">0 / 7 found · 7 left</span>
+      <span id="hud-time">00:00</span>
+      <span id="hud-score">Score 0</span>
+      <span id="hud-hints">Hints 3</span>
+      <button id="btn-hint" title="Hint (H)">💡 Hint</button>
+      <button id="btn-restart" title="Restart level (R)">↻ Restart</button>
+      <button id="btn-sound" title="Toggle sound">🔊 Sound on</button>
+    </div>
+
+    <div id="stage">
+      <canvas id="game"></canvas>
+      <div id="toast"></div>
+
+      <div id="screen-title" class="overlay">
+        <div class="panel">
+          <h2>🔍 Twin Spots</h2>
+          <p>Two pictures sit side by side — but they are <b>not</b> identical.
+             Seven little things changed between picture A and picture B.</p>
+          <p>Click a difference on <b>either</b> picture to circle it on both.
+             Wrong clicks cost 10 points. Press <b>H</b> for a hint (−50),
+             <b>R</b> to restart a level.</p>
+          <p>Three worlds to explore: a lighthouse cove, a cat garden and a moon base.</p>
+          <button id="btn-start" class="big">▶ Start playing</button>
+          <div class="levels">
+            <span>Jump to a level:</span>
+            <button class="lvl-btn" data-level="0">1 · Lighthouse Cove</button>
+            <button class="lvl-btn" data-level="1">2 · Cat Garden</button>
+            <button class="lvl-btn" data-level="2">3 · Moon Base</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="screen-level" class="overlay hidden">
+        <div class="panel">
+          <h2 id="level-title">Level complete!</h2>
+          <p id="level-detail"></p>
+          <p>All seven differences found. Sharp eyes!</p>
+          <button id="btn-next" class="big">Next level</button>
+        </div>
+      </div>
+
+      <div id="screen-win" class="overlay hidden">
+        <div class="panel">
+          <h2>🏆 You found them all!</h2>
+          <p>Three worlds, twenty-one differences — nothing escaped your eyes.</p>
+          <p class="score-line">Total score: <b id="win-score">0 points</b></p>
+          <p class="score-line">Total time: <b id="win-time">00:00</b></p>
+          <button id="btn-again" class="big">↻ Play again</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Twin Spots — an original spot-the-difference game. Pictures A and B are drawn
+         fresh by the game itself; nothing is downloaded. Keyboard: H hint · R restart ·
+         N next level · Enter start.</p>
+    </footer>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
